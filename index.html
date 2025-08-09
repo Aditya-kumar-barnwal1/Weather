@@ -39,7 +39,7 @@
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
       </form>
     </div>
   </div>
@@ -49,37 +49,39 @@
 <div class="container">
   <div class="p-5 mb-4 bg-body-tertiary rounded-3">
     <div class="container-fluid py-5">
-        <h2 class="display-5 fw-bold">London,UK</h2>
-        <h3>  At 9:00 PM</h3>
-        <img src="//cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon">
-        <h3>Mist</h3>
-        <p class="col-md-8 fs-4">Current Temperature:28.3'C</p>
-        <p class="col-md-8 fs-4">Feels Like: 31'C</p>
-        <p class="col-md-8 fs-4">Last Updated: 2025-08-08 20:15</p>
+        <h2 class="display-5 fw-bold" id="place">London,UK</h2>
+        <h3 id="date">  At 9:00 PM</h3>
+        <img src="" alt="icon" id="icon">
+        <h3 id="current.text">Mist</h3>
+        <p class="col-md-8 fs-4">Current Temperature(C): <span id="current_temp_c"></span></p>
+        <p class="col-md-8 fs-4">Current Temperature(F): <span id="current_temp_f"></span></p>
+        <p class="col-md-8 fs-4">Feels Like(C): <span id="feels_like"></span></p>
+        <p class="col-md-8 fs-4">Humidity: <span id="humidity"></span>%</p>
+        <p class="col-md-8 fs-4">Chance of Rain: <span id="chance_of_rain"></span>%</p>
     </div>
   </div>
   <!-- Main Part-2 -->
   <div class="row align-items-md-stretch">
     <div class="col-md-6">
-        <div class="h-100 p-5 text-bg-dark rounded-3">
-          <img src="images/night.png" alt="Night">
-            <p>Min Temp:</p>
-            <p>Wind Speed: 34kph</p>
-            <p>Wind Degree: 230</p>
-            <p>Wind Direction: SW</p>
-            <p>Moonrise:</p>
-            <p>Moonset:</p>
+        <div class="h-100 p-5 text-bg-dark rounded-3 " style="font-size:x-large;" >
+            <p>Min Temp: <span id="min_temp"></span></p>
+            <p>Wind Speed: <span id="wind_kph"></span></p>
+            <p>Wind Degree: <span id="wind_degree"></span></p>
+            <p>Wind Direction: <span id="wind_dir"></span></p>
+            <p>Moonrise: <span id="moonrise"></span></p>
+            <p>Moonset: <span id="moonset"></span></p>
+            <p>Moon Phase: <span id="moonphase"></span></p>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3" style="font-size: x-large;">
           <img src="images/Day.jpeg" alt="day">
-            <p>Max Temp:</p>
-            <p>Humidity: 34%</p>
-            <p>Heat Index: 31.9</p>
-            <p>Gust(kph): 14.4</p>
-            <p>Sunrise:</p>
-            <p>Sunset:</p>
+            <p>Max Temp: <span id="max_temp"></span></p>
+            <p>UV: <span id="uv"></span></p>
+            <p>Heat Index: <span id="heatindex_c"></span></p>
+            <p>Gust(kph): <span id="gust_kph"></span></p>
+            <p>Sunrise: <span id="sunrise"></span></p>
+            <p>Sunset: <span id="sunset"></span></p>
         </div>
     </div>
   </div>
