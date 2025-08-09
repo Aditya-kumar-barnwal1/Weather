@@ -38,7 +38,7 @@
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <input  class="form-control me-2" type="text" placeholder="Search" aria-label="Search" id="CityName"/>
         <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
       </form>
     </div>
@@ -53,19 +53,31 @@
         <h3 id="date">  At 9:00 PM</h3>
         <img src="" alt="icon" id="icon">
         <h3 id="current.text">Mist</h3>
-        <p class="col-md-8 fs-4">Current Temperature(C): <span id="current_temp_c"></span></p>
-        <p class="col-md-8 fs-4">Current Temperature(F): <span id="current_temp_f"></span></p>
-        <p class="col-md-8 fs-4">Feels Like(C): <span id="feels_like"></span></p>
-        <p class="col-md-8 fs-4">Humidity: <span id="humidity"></span>%</p>
-        <p class="col-md-8 fs-4">Chance of Rain: <span id="chance_of_rain"></span>%</p>
+        <h3 class="col-md-8 fs-4">Current Temperature: <span id="current_temp_c"></span>&#8451; / <span id="current_temp_f"></span>&#8457;</h3>
+        <h3 class="col-md-8 fs-4">Feels Like: <span id="feels_like"></span>&#8451;</h3>
+        <h3 class="col-md-8 fs-4">Humidity: <span id="humidity"></span>%</h3>
+        <h3 class="col-md-8 fs-4">Chance of Rain: <span id="chance_of_rain"></span>%</h3>
     </div>
   </div>
   <!-- Main Part-2 -->
   <div class="row align-items-md-stretch">
     <div class="col-md-6">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3" style="font-size: x-large;">
+          <h2>Hot Info</h2>
+            <p>Maximum Temp: <span id="max_temp"></span>&#8451;</p>
+            <p>Minimum Temp: <span id="min_temp"></span>&#8451;</p>
+            <p>Average Temp: <span id="avg_temp"></span>&#8451;</p>
+            <p>UV: <span id="uv"></span></p>
+            <p>Heat Index: <span id="heatindex_c"></span></p>
+            <p>Sunrise: <span id="sunrise"></span></p>
+            <p>Sunset: <span id="sunset"></span></p>
+        </div>
+    </div>
+    <div class="col-md-6">
         <div class="h-100 p-5 text-bg-dark rounded-3 " style="font-size:x-large;" >
-            <p>Min Temp: <span id="min_temp"></span></p>
-            <p>Wind Speed: <span id="wind_kph"></span></p>
+          <h2>Cold Info</h2>
+            <p>Gust: <span id="gust_kph"></span> km/h</p>
+            <p>Wind Speed: <span id="wind_kph"></span> km/h</p>
             <p>Wind Degree: <span id="wind_degree"></span></p>
             <p>Wind Direction: <span id="wind_dir"></span></p>
             <p>Moonrise: <span id="moonrise"></span></p>
@@ -73,17 +85,7 @@
             <p>Moon Phase: <span id="moonphase"></span></p>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="h-100 p-5 bg-body-tertiary border rounded-3" style="font-size: x-large;">
-          <img src="images/Day.jpeg" alt="day">
-            <p>Max Temp: <span id="max_temp"></span></p>
-            <p>UV: <span id="uv"></span></p>
-            <p>Heat Index: <span id="heatindex_c"></span></p>
-            <p>Gust(kph): <span id="gust_kph"></span></p>
-            <p>Sunrise: <span id="sunrise"></span></p>
-            <p>Sunset: <span id="sunset"></span></p>
-        </div>
-    </div>
+    
   </div>
   <br><br>
 
@@ -107,47 +109,50 @@
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row" class="text-start">Today</th>
-                    <td><i class="bi bi-check-lg"></i>1</td>
-                    <td><i class="bi bi-check-lg"></i>2</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
+                    <th scope="row" class="text-start" id="today"></th>
+                    <td><i class="bi bi-check-lg"></i> <span id="today6"></span><img src="" id="todayI6"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="today8"></span><img src="" id="todayI8"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="today10"></span><img src="" id="todayI10"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="today12"></span><img src="" id="todayI12"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="today14"></span><img src="" id="todayI14"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="today16"></span><img src="" id="todayI16"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="today18"></span><img src="" id="todayI18"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="today20"></span><img src="" id="todayI20"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="today22"></span><img src="" id="todayI22"></td>
                 </tr>
                 <tr>
-                    <th scope="row" class="text-start">Tomorrow</th>
-                    <td><i class="bi bi-check-lg"></i>1</td>
-                    <td><i class="bi bi-check-lg"></i>1</td>
-                    <td><i class="bi bi-check-lg"></i>1</td>
-                    <td><i class="bi bi-check-lg"></i>1</td>
-                    <td><i class="bi bi-check-lg"></i>1</td>
-                    <td><i class="bi bi-check-lg"></i>1</td>
-                    <td><i class="bi bi-check-lg"></i>1</td>
-                    <td><i class="bi bi-check-lg"></i>1</td>
-                    <td><i class="bi bi-check-lg"></i>1</td>
+                    <th scope="row" class="text-start" id="tomorrow"></th>
+                    <td><i class="bi bi-check-lg"></i> <span id="tomorrow6"></span><img src="" id="tomorrowI6"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="tomorrow8"></span><img src="" id="tomorrowI8"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="tomorrow10"></span><img src="" id="tomorrowI10"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="tomorrow12"></span><img src="" id="tomorrowI12"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="tomorrow14"></span><img src="" id="tomorrowI14"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="tomorrow16"></span><img src="" id="tomorrowI16"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="tomorrow18"></span><img src="" id="tomorrowI18"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="tomorrow20"></span><img src="" id="tomorrowI20"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="tomorrow22"></span><img src="" id="tomorrowI22"></td>
                 </tr>
+                
             </tbody>
             <tbody>
-                <tr>
-                    <th scope="row" class="text-start">Day After Tomorrow</th>
-                    <td><i class="bi bi-check-lg"></i>1</td>
-                    <td><i class="bi bi-check-lg"></i>2</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
-                    <td><i class="bi bi-check-lg"></i>3</td>
+              <tr>
+                    <th scope="row" class="text-start" id="dat"></th>
+                    <td><i class="bi bi-check-lg"></i> <span id="dat6"></span><img src="" id="datI6"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="dat8"></span><img src="" id="datI8"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="dat10"></span><img src="" id="datI10"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="dat12"></span><img src="" id="datI12"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="dat14"></span><img src="" id="datI14"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="dat16"></span><img src="" id="datI16"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="dat18"></span><img src="" id="datI18"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="dat20"></span><img src="" id="datI20"></td>
+                    <td><i class="bi bi-check-lg"></i> <span id="dat22"></span><img src="" id="datI22"></td>
                 </tr>
+                
             </tbody>
         </table>
     </div>
     <br>
+    <h2 class="display-6 text-center mb-4">Other Common Places</h2>
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
@@ -155,12 +160,12 @@
                     <h4 class="my-0 fw-normal">Tokyo,Japan</h4>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">0'<small class="text-body-secondary fw-light">C</small></h1>
+                    <h1 class="card-title pricing-card-title"><span id="Tokyo_temp"></span><small class="text-body-secondary fw-light">&#8451;</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Max Temperature:</li>
-                        <li>Wind Speed:</li>
-                        <li>Sunset:</li>
-                        <li>Humidity</li>
+                        <li>Max Temperature: <span id="Tokyo_max_temp"></span></li>
+                        <li>Wind Speed: <span id="Tokyo_wind_speed"></span></li>
+                        <li>Sunset: <span id="Tokyo_sunset"></span></li>
+                        <li>Humidity: <span id="Tokyo_humidity"></span></li>
                     </ul>
                     <button type="button" class="w-100 btn btn-lg btn-outline-primary">View Full Report</button>
                 </div>
@@ -172,12 +177,12 @@
                     <h4 class="my-0 fw-normal">Moscow,Russia</h4>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">15<small class="text-body-secondary fw-light">'C</small></h1>
+                    <h1 class="card-title pricing-card-title"><span id="Moscow_temp"></span><small class="text-body-secondary fw-light">&#8451;</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Max Temperature:</li>
-                        <li>Wind Speed:</li>
-                        <li>Sunset:</li>
-                        <li>Humidity:</li>
+                        <li>Max Temperature: <span id="Moscow_max_temp"></span></li>
+                        <li>Wind Speed: <span id="Moscow_wind_speed"></span></li>
+                        <li>Sunset: <span id="Moscow_sunset"></span></li>
+                        <li>Humidity: <span id="Moscow_humidity"></span></li>
                     </ul>
                     <button type="button" class="w-100 btn btn-lg btn-primary">View Full Report</button>
                 </div>
@@ -189,12 +194,12 @@
                     <h4 class="my-0 fw-normal">Mumbai,India</h4>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">29<small class="text-body-secondary fw-light">'C</small></h1>
+                    <h1 class="card-title pricing-card-title"><span id="Mumbai_temp"></span><small class="text-body-secondary fw-light">&#8451;</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Max Temperature:</li>
-                        <li>Wind Speed:</li>
-                        <li>Sunset:</li>
-                        <li>Humidity:</li>
+                        <li>Max Temperature: <span id="Mumbai_max_temp"></span></li>
+                        <li>Wind Speed: <span id="Mumbai_wind_speed"></span></li>
+                        <li>Sunset: <span id="Mumbai_sunset"></span></li>
+                        <li>Humidity: <span id="Mumbai_humidity"></span></li>
                     </ul>
                     <button type="button" class="w-100 btn btn-lg btn-primary">View Full Report</button>
                 </div>
