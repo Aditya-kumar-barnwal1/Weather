@@ -165,3 +165,15 @@ let weatherImage=(result)=>{
         }
     }
 }
+let button_tj=document.querySelector("#button_tj").addEventListener('click',(e)=>{
+    e.preventDefault();
+    weather('tokyo');
+})
+let button_mr=document.querySelector("#button_mr").addEventListener('click',(e)=>{
+    e.preventDefault();
+    weather('Moscow');
+})
+let button_mi=document.querySelector("#button_mi").addEventListener('click',(e)=>{
+    e.preventDefault();
+    weather('Mumbai');
+})
