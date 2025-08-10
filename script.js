@@ -16,6 +16,8 @@ async function weather(city) {
         today(result);
         tomorrow(result);
         dat(result);
+        weatherImage(result);
+       
     }
 
     catch (error) {
@@ -56,7 +58,7 @@ let today=(result)=>{
         document.getElementById('today').innerHTML=result.forecast.forecastday[0].date+' (Today)'
     for(let i=6;i<=22;i+=2)
     {
-        document.getElementById(`today${i}`).innerHTML=result.forecast.forecastday[0].hour[i].temp_c;
+        document.getElementById(`today${i}`).innerHTML=result.forecast.forecastday[0].hour[i].temp_c+' &#8451;';
         document.getElementById(`todayI${i}`).src=`${result.forecast.forecastday[0].hour[i].condition.icon}`;
     }
 }
@@ -64,7 +66,7 @@ let tomorrow=(result)=>{
     document.getElementById('tomorrow').innerHTML=result.forecast.forecastday[1].date+' (Tomorrow)'
     for(let i=6;i<=22;i+=2)
     {
-        document.getElementById(`tomorrow${i}`).innerHTML=result.forecast.forecastday[1].hour[i].temp_c;
+        document.getElementById(`tomorrow${i}`).innerHTML=result.forecast.forecastday[1].hour[i].temp_c+' &#8451;';
         document.getElementById(`tomorrowI${i}`).src=`${result.forecast.forecastday[1].hour[i].condition.icon}`;
     }
 }
@@ -72,7 +74,7 @@ let dat=(result)=>{
     document.getElementById('dat').innerHTML=result.forecast.forecastday[2].date+ ' (Day after Tomorrow)'
     for(let i=6;i<=22;i+=2)
     {
-        document.getElementById(`dat${i}`).innerHTML=result.forecast.forecastday[2].hour[i].temp_c;
+        document.getElementById(`dat${i}`).innerHTML=result.forecast.forecastday[2].hour[i].temp_c+' &#8451;';
         document.getElementById(`datI${i}`).src=`${result.forecast.forecastday[2].hour[i].condition.icon}`;
     }
 }
@@ -100,3 +102,66 @@ let most=(result,City)=>{
 OPCs('Tokyo');
 OPCs('Mumbai');
 OPCs('Moscow');
+let weatherImage=(result)=>{
+    const img=document.getElementById('weather-card')
+    if(result.current.is_day===1)
+    {
+        switch (result.current.condition.code) {
+            case 1000:
+                //Sunny
+                img.style.backgroundImage="url(images/Sunny_day.jpg)";
+                break;
+            case 1003:
+                //Partlycloudy
+                img.style.backgroundImage="url(images/Cloudy.jpeg)";
+                break;
+            case 1006:
+                img.style.backgroundImage="url(images/Cloudy.jpeg)";
+                //cloudy
+                break;
+            case 1030:
+                img.style.backgroundImage="url(images/Mist_day.jpg)";
+                //Mist
+                break;
+            case 1087:
+                img.style.backgroundImage="url(images/thunder_day.jpeg)";
+                //Thunder
+                break;
+
+            default:
+                img.style.backgroundImage="url(images/Rainy_day.jpg)";
+                //Rain
+                break;
+        }
+    }
+    else
+    {
+        switch (result.current.condition.code) {
+            case 1000:
+                //Sunny
+                img.style.backgroundImage="url(images/clear_Night.jpg)";
+                break;
+            case 1003:
+                //Partlycloudy
+                img.style.backgroundImage="url(images/cloudy_night.jpeg)";
+                break;
+            case 1006:
+                img.style.backgroundImage="url(images/cloudy_night.jpeg)";
+                //cloudy
+                break;
+            case 1030:
+                img.style.backgroundImage="url(images/mist_night.jpeg)";
+                //Mist
+                break;
+            case 1087:
+                img.style.backgroundImage="url(images/thunder_night.jpeg)";
+                //Thunder
+                break;
+
+            default:
+                img.style.backgroundImage="url(images/rain_night.jpeg)";
+                //Rain
+                break;
+        }
+    }
+}

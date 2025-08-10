@@ -6,6 +6,17 @@
     <title>My Weather App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   </head>
+  <style>
+    #weather-card{
+      position: relative;
+      overflow: hidden;
+      background: url('images/Clear.jpeg') no-repeat center/cover;
+      color: white; 
+    }
+    #overlay{
+      color:floralwhite;
+    }
+  </style>
   <body>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary" >
@@ -47,16 +58,16 @@
 <br>
 <!-- main part-1 -->
 <div class="container">
-  <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-    <div class="container-fluid py-5">
+  <div class="p-5 mb-4 bg-body-tertiary rounded-3 " id="weather-card">
+    <div class="container-fluid py-5 " id="overlay">
         <h2 class="display-5 fw-bold" id="place">London,UK</h2>
         <h3 id="date">  At 9:00 PM</h3>
-        <img src="" alt="icon" id="icon">
-        <h3 id="current.text">Mist</h3>
-        <h3 class="col-md-8 fs-4">Current Temperature: <span id="current_temp_c"></span>&#8451; / <span id="current_temp_f"></span>&#8457;</h3>
-        <h3 class="col-md-8 fs-4">Feels Like: <span id="feels_like"></span>&#8451;</h3>
-        <h3 class="col-md-8 fs-4">Humidity: <span id="humidity"></span>%</h3>
-        <h3 class="col-md-8 fs-4">Chance of Rain: <span id="chance_of_rain"></span>%</h3>
+        <img src="" alt="icon" id="icon" width="200px">
+        <h2 id="current.text">Mist</h2>
+        <h2 >Current Temperature: <span id="current_temp_c"></span>&#8451; / <span id="current_temp_f"></span>&#8457;</h2>
+        <h2 >Feels Like: <span id="feels_like"></span>&#8451;</h2>
+        <h2 >Humidity: <span id="humidity"></span>%</h2>
+        <h2 >Chance of Rain: <span id="chance_of_rain"></span>%</h2>
     </div>
   </div>
   <!-- Main Part-2 -->
