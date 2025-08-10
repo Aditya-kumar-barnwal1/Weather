@@ -17,7 +17,10 @@ async function weather(city) {
         tomorrow(result);
         dat(result);
         weatherImage(result);
-       
+        window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
     }
 
     catch (error) {
@@ -159,21 +162,18 @@ let weatherImage=(result)=>{
                 break;
 
             default:
-                img.style.backgroundImage="url(images/rain_night.jpeg)";
+                img.style.backgroundImage="url(images/rain_night.jpg)";
                 //Rain
                 break;
         }
     }
 }
 let button_tj=document.querySelector("#button_tj").addEventListener('click',(e)=>{
-    e.preventDefault();
     weather('tokyo');
 })
 let button_mr=document.querySelector("#button_mr").addEventListener('click',(e)=>{
-    e.preventDefault();
     weather('Moscow');
 })
 let button_mi=document.querySelector("#button_mi").addEventListener('click',(e)=>{
-    e.preventDefault();
     weather('Mumbai');
 })
